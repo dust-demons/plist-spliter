@@ -37,11 +37,11 @@ def export_image(img, pathname, item):
 # 获取 frame 参数
 def get_frame(frame):
     result = {}
-    if frame['frame']:
-        result['frame'] = frame['frame'].replace('}', '').replace('{', '').split(',')
-        result['sourceSize'] = frame['sourceSize'].replace('}', '').replace('{', '').split(',')
-        result['sourceColorRect'] = frame['sourceColorRect'].replace('}', '').replace('{', '').split(',')
-        result['rotated'] = frame['rotated']
+    if frame['textureRect']:
+        result['frame'] = frame['textureRect'].replace('}', '').replace('{', '').split(',')
+        result['sourceSize'] = frame['spriteSourceSize'].replace('}', '').replace('{', '').split(',')
+        result['sourceColorRect'] = frame['spriteOffset'].replace('}', '').replace('{', '').split(',')
+        result['rotated'] = frame['textureRotated']
     return result
 
 # 生成图片
